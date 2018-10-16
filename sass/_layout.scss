@@ -1,38 +1,64 @@
+/* Main Container styling for two column layout */
 .container {
+    /* Styling to occupy full width and height of viewport on large screens */
     max-height: 100vh;
     max-width: 100vw;
+
+    /* Display is set to grid for easy split column layout */
     display: grid;
+
+    /* Two columns are set */
     grid-template-columns: 47vw 53vw;
+
+    /* Rows are set to occupy full height of the viewport */
     grid-template-rows: 100vh 100vh;
+
     @media only screen and (max-width: 768px) {
+        /* The display should be reset on mobile screens */
         display: unset;
     }
 }
+
+/* The Left Column */
 .col-1-of-2 {
+    /* Display set to flex for easing positioning of child elements of one-direction layout */
     display: flex;
+
+    /* For centering of items in one direction */
     align-items: center;
     justify-content: center;
     background: hsl(228, 45%, 44%);
 
     &__image {
+        /* The illustration image is set to a flexible width based on the parent column width */
         width: 55%;
         
     }
     @media only screen and (max-width: 768px) {
+        /* The Left Column should not be displayed in mobile layout */
         display: none;
     }
 }
+
+/* Right Column Styling */
 .col-2-of-2 {
     padding: 6rem 5rem 3rem 5rem;
-    
+
+    /* Display is set to grid for easy two directional layout for logo,  and text */
     display: grid;
+
+     /* To achieve a single column layout */
     grid-template-columns: 1fr;
+
     @media only screen and (max-width: 1100px) {
+
+        /* To create rows among elements in order to improve readability on screens sizes lower than 1100px */
         grid-template-rows: repeat(auto-fit, minmax(max-content, 1fr));
     }
     @media only screen and (max-width: 768px) {
         padding: 0;
         
+        /* To create dynamic rows that adjust according to content in mobile screens */
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, max-content);
     }
