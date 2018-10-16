@@ -304,9 +304,9 @@ body {
 @media only screen and (max-width: 320px) {
   .header-mobile__intro {
     /* Reduced the scaling to smaller size to match screen size */
-    -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
     margin-top: -15%;
   }
 }
