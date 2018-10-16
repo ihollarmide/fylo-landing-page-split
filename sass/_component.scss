@@ -1,10 +1,16 @@
 .header {
+    /* To occupy full column of the second section */
     grid-column: 1 / -1;
+
+    /* Display set to flex for easy positioning of logo and social icons*/
     display: flex;
     position: relative;
     @media only screen and (max-width: 768px) {
+        /* It should occupy row 1 and 2 with an height of 65vh*/
         grid-row: 1 / 2;
         height: 65vh;
+
+        /* Display set to grid for easy placement of illustration and background intro*/
         display: grid;
         position: unset;
         grid-template-columns:repeat(8, 1fr);
@@ -12,64 +18,90 @@
     }
     &__logo {
         
+        /* A flex-basis/ width of 50% relative to the flex container*/
         flex: 50% 0 0;
+
         @media only screen and (max-width: 768px) {
+
+            /* Reset Flex property on mobile screens*/
             flex: unset;
+
             grid-column: 1 / 3;
             grid-row: 1 / 2;
+
+            /* Stacking order increased for visibility above the background intro*/
             z-index: 1000;
             padding: 2rem 0 0 2.5rem;
         }
         &--shape {
+            /* To reduce the size of the "Fylo logo Shape*/
             transform: scale(.03);
             @media only screen and (max-width: 768px) {
                 transform: scale(.035);
             }
+
             @media only screen and (max-width: 400px) {
                 transform: scale(.03);
             }
+
         }
         &--text {
+            /* To reduce the size of the "Fylo logo text "Fylo"*/
             transform: scale(.03);
             @media only screen and (max-width: 768px) {
+
+                /* Changed the fylo logo text to white on mobile layout */
                 transform: scale(.035);
                 fill: #fff;
             }
+
             @media only screen and (max-width: 400px) {
                 transform: scale(.03);
             }
+
         }
     }
     &__social-icons {
+         /* A flex-basis/ width of 50% relative to the flex container*/
         flex: 50% 0 0;
         height: 40px;
+
+        /* Aligning of the child items using flexbox */
         display: flex;
         justify-content: flex-end;
         align-items: center;
         & > *:not(:first-child) {
+            /* Spacing between icons*/
             margin-left: 20%;
         }
         
         & > *:not(:last-child) {
+
            @media only screen and (max-width: 768px) {
                 margin-right: 12.5%;
             }
+
         }
         @media only screen and (max-width: 768px) {
+            /* Reset Predefined Properties on mobile screens */
             flex: unset;
             display: unset;
             justify-content: unset;
             align-items: unset;
             height: unset;
+
+            /* New Grid positioning in mobile screens */ 
             grid-column: 6 / 9;
             grid-row: 1 / 2;
             z-index: 1500;
         }
     }
     &__icon-link {
+        /* Default link styling reset */
         text-decoration: none;
         text-transform: uppercase;
         color: #fff;
+
         @media only screen and (max-width: 768px) {
             margin-top: 20%;
         }
@@ -77,48 +109,65 @@
     &__icon {
         font-size: 2.5rem;
         color: hsl(243, 87%, 12%);
+
         @media only screen and (max-width: 768px) {
             color: #fff;
             align-self: center;
+
         }
+
         @media only screen and (max-width: 400px) {
             font-size: 2.5rem;
         }
     }
+
+    /* Mobile Header Styling */
     &-mobile__intro {
-        height: 0;
-        width: 0;
-        visibility: hidden;
-        opacity: 0;
+        /* Mobile Header Intro non-visibility on desktop screens */
+        display: none;
         
         @media only screen and (max-width: 768px) {
-            height: unset;
-            width: unset;
-            visibility: visible;
-            opacity: 1;
+            /* Mobile Header Intro non-visibility on desktop screens */
+            display: unset;
+
             grid-column: 1 / -1;
             grid-row: 1 / -1;
+
+            /* Scaled the size of the header intro on large mobile screen to occupy more space */
             transform: scale(2.1);
             transform-origin: left;
         }
+
         @media only screen and (max-width: 600px) {
             transform: scale(1.8);
         }
+
         @media only screen and (max-width: 500px) {
             transform: scale(1.5);
         }
+
         @media only screen and (max-width: 400px) {
             transform: scale(1.2);
         }
+
         @media only screen and (max-width: 375px) {
+            /* Reset the scaling to default value to match screen size */
             transform: scale(1);
             transform-origin: 0;
-            // margin-top: -20%;
+        }
+
+        @media only screen and (max-width: 320px) {
+            /* Reduced the scaling to smaller size to match screen size */
+            transform: scale(.8);
+            margin-top: -15%;
         }
     }
     &-mobile__illustration-box {
+        /* Mobile Header Illustration non-visibility on desktop screens */
         display: none;
+
         @media only screen and (max-width: 768px) {
+            /* Mobile Header Illustration visibility on mobile screens */
             display: unset;
             position: absolute;
             top: 28%;
@@ -127,19 +176,27 @@
         }
     }
     &-mobile__illustration {
+        /*Mobile Illustration width*/
         width: 115%;
     }
 }
+
+    /* Main section styling */
     .fylo {
+        /* Occupy full column */ 
         grid-column: 1 / -1;
         
+        /* Display as grid for easy layout of child elements */
         display: grid;
         grid-template-rows: minmax(min-content,max-content);
         grid-row-gap: 2rem;
         @media only screen and (max-width: 768px) {
+            /* Reset Grid display on mobile screens */
             display: unset;
             grid-template-rows: unset;
             grid-row-gap: unset;
+
+            /* Inherit and change grid layout with new values */
             grid-column: 1 / -1;
             grid-row: 2 / 3;
             padding: 2rem 6rem;
@@ -147,43 +204,56 @@
         }
        
         &__heading {
+            /* Font properties styling */
             font-size: 3.5rem;
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
             color: hsl(243, 87%, 12%);
+
             @media only screen and (max-width: 768px) {
+                /* Font-size increased on mobiles for easy readability */
                 font-size: 5rem;
             }
         }
     
         &__text {
+
+            /* Main text styling */ 
             font-family: 'Open Sans';
             font-weight: 400;
             color: hsl(0, 0%, 50%);
             font-size: 1.5rem;
             align-self: start;
+
             @media only screen and (max-width: 768px) {
+                /* Main Text Styling on Mobile */
                 font-size: 2rem;
                 margin: 3rem 0 6rem 0;
             }
         }
     
         &__form {
+            /* Fylo form styling */
             display: grid;
             grid-template-columns: 2fr 1fr;
             grid-template-rows: 1fr 1fr;
             grid-column-gap: 1.5rem;
             font-family: 'Raleway';
+
             @media only screen and (max-width: 768px) {
+                /* Reset display from grid to default on mobile screens */
                 display: unset;
                 
             }
         }
     
         &__form-name {
+
+            /* Form label displayed as block to occupy full width */
             display: block;
             font-size: 2.5rem;
             font-weight: 700;
+
             @media only screen and (max-width: 768px) {
                 font-size: 3rem;
             }
@@ -226,7 +296,10 @@
     }
     
     .footer {
+        /* Occupy full column */ 
         grid-column: 1 / -1;
+
+        /* Position items  and text at the center */
         align-self: center;
         text-align: center;
     

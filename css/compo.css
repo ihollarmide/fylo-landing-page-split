@@ -1,50 +1,4 @@
-html {
-  font-size: 62.5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-@media only screen and (max-width: 1000px) {
-  html {
-    font-size: 55%;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  html {
-    font-size: 50%;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  html {
-    font-size: 40%;
-  }
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-body {
-  font-family: 'Open Sans', 'Raleway', sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-@media only screen and (max-width: 768px) {
-  body {
-    line-height: 1;
-  }
-}
-
 .header {
-  /* To occupy full column of the second section */
   grid-column: 1 / -1;
   /* Display set to flex for easy positioning of logo and social icons*/
   display: -webkit-box;
@@ -178,7 +132,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .header__social-icons > *:not(:last-child) {
-    margin-right: 12.5%;
+    margin-right: 15%;
   }
 }
 
@@ -219,7 +173,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .header__icon-link {
-    margin-top: 20%;
+    margin-top: 10%;
   }
 }
 
@@ -240,19 +194,25 @@ body {
 
 @media only screen and (max-width: 400px) {
   .header__icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 .header-mobile__intro {
   /* Mobile Header Intro non-visibility on desktop screens */
-  display: none;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 768px) {
   .header-mobile__intro {
-    /* Mobile Header Intro non-visibility on desktop screens */
-    display: unset;
+    /* Mobile Header Intro visibility on mobile screens */
+    height: unset;
+    width: unset;
+    opacity: 1;
+    visibility: visible;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     /* Scaled the size of the header intro on large mobile screen to occupy more space */
@@ -311,13 +271,13 @@ body {
   }
 }
 
-.header-mobile__illustration-box {
+.header-mobile__intro__illustration-box {
   /* Mobile Header Illustration non-visibility on desktop screens */
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .header-mobile__illustration-box {
+  .header-mobile__intro__illustration-box {
     /* Mobile Header Illustration visibility on mobile screens */
     display: unset;
     position: absolute;
@@ -329,16 +289,16 @@ body {
   }
 }
 
-.header-mobile__illustration {
+.header-mobile__intro__illustration-image {
   /*Mobile Illustration width*/
   width: 115%;
 }
 
-/* Main section styling */
 .fylo {
+  /* Main section styling */
   /* Occupy full column */
   grid-column: 1 / -1;
-  /* Display as grid for easy layout of child elements */
+  /* Display as grid for easy palcements of child elements */
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: minmax(min-content, max-content);
@@ -365,7 +325,7 @@ body {
 }
 
 .fylo__heading {
-  /* Font properties styling */
+  /* FOnt properties styling */
   font-size: 3.5rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -375,7 +335,7 @@ body {
 @media only screen and (max-width: 768px) {
   .fylo__heading {
     /* Font-size increased on mobiles for easy readability */
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
@@ -393,7 +353,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .fylo__text {
-    /* Main Text Styling on Mobile */
+    /* MainnText Styling on Mobile */
     font-size: 2rem;
     margin: 3rem 0 6rem 0;
   }
@@ -415,11 +375,15 @@ body {
   .fylo__form {
     /* Reset display from grid to default on mobile screens */
     display: unset;
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
+    -ms-grid-rows: unset;
+        grid-template-rows: unset;
+    grid-column-gap: unset;
   }
 }
 
 .fylo__form-name {
-  /* Form label displayed as block to occupy full width */
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
@@ -468,6 +432,7 @@ body {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
@@ -479,9 +444,9 @@ body {
 }
 
 .footer {
-  /* Occupy full column */
+  /* Occupy full column  */
   grid-column: 1 / -1;
-  /* Position items  and text at the center */
+  /*Position items  and text at the center*/
   -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
@@ -523,91 +488,5 @@ body {
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     grid-row: 3 / 4;
-  }
-}
-
-/* Main Container styling for two column layout */
-.container {
-  /* Styling to occupy full width and height of viewport on large screens */
-  max-height: 100vh;
-  max-width: 100vw;
-  /* Display is set to grid for easy split column layout */
-  display: -ms-grid;
-  display: grid;
-  /* Two columns are set */
-  -ms-grid-columns: 47vw 53vw;
-      grid-template-columns: 47vw 53vw;
-  /* Rows are set to occupy full height of the viewport */
-  -ms-grid-rows: 100vh 100vh;
-      grid-template-rows: 100vh 100vh;
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    /* The display should be reset on mobile screens */
-    display: unset;
-  }
-}
-
-/* The Left Column */
-.col-1-of-2 {
-  /* Display set to flex for easing positioning of child elements of one-direction layout */
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  /* For centering of items in one direction */
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: #3e52a3;
-}
-
-.col-1-of-2__image {
-  /* The illustration image is set to a flexible width based on the parent column width */
-  width: 55%;
-}
-
-@media only screen and (max-width: 768px) {
-  .col-1-of-2 {
-    /* The Left Column should not be displayed in mobile layout */
-    display: none;
-  }
-}
-
-/* Right Column Styling */
-.col-2-of-2 {
-  padding: 6rem 5rem 3rem 5rem;
-  /* Display is set to grid for easy two directional layout for logo,  and text */
-  display: -ms-grid;
-  display: grid;
-  /* To achieve a single column layout */
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-}
-
-@media only screen and (max-width: 1100px) {
-  .col-2-of-2 {
-    /* To create rows among elements in order to improve readability on screens sizes lower than 1100px */
-    -ms-grid-rows: (minmax(max-content, 1fr))[auto-fit];
-        grid-template-rows: repeat(auto-fit, minmax(-webkit-max-content, 1fr));
-        grid-template-rows: repeat(auto-fit, minmax(max-content, 1fr));
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .col-2-of-2 {
-    padding: 0;
-    /* To create dynamic rows that adjust according to content in mobile screens */
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: (max-content)[3];
-        grid-template-rows: repeat(3, -webkit-max-content);
-        grid-template-rows: repeat(3, max-content);
   }
 }
