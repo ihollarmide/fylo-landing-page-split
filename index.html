@@ -3,59 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- For #rd party fonts from Google -->
+        
     <link href="https://fonts.googleapis.com/css?family=Raleway:700|Open+Sans:400,700" rel="stylesheet">
-
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-    <!-- Page Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
 
     <title>Frontend Mentor | Beta sign up split layout Challenge</title>
 
   </head>
   <body>
-    <!-- Main Container for Desktop Layout -->
     <div class="container">
 
-      <!--Left column of the layout -->
       <div class="col-1-of-2">
-        <!-- ILLustration for Large Screens/Desktop Screens -->
-        <img src="images/illustration-main.svg" alt="illustration" class="illustration">
+        <img src="images/illustration-main.svg" alt="illustration" class="col-1-of-2__image">
       </div>
 
-      <!--Right column of the layout -->
       <div class="col-2-of-2">
 
-        <!-- Header section -->
         <header class="header">
-            <!-- Fylo Logo in SVG -->
               <svg xmlns="http://www.w3.org/2000/svg" class="header__logo">
                 <path class="header__logo--shape" d="M759.518 304.147L276.498 528.08v2.087l483.02 223.942 484.722-224.704v-.564L759.518 304.147zm0 368.176L450.634 529.128l308.894-143.204 308.923 143.204-308.933 143.195zm-483.02 113.628v81.588l483.02 221.123 484.722-221.875V785.2l-484.722 221.36-483.02-220.608zm0-165.451v81.588l483.02 221.093 484.722-221.845v-81.598l-484.722 221.35L276.498 620.5z" fill="#bdbafa"/>
                 <path class="header__logo--text" d="M1925.144 402.109h-287.987V544.57h284.157v96.506h-284.157v271.137h-116.42V300.24h404.407V402.11zm463.383 66.635l-199.14 526.188q-22.212 58.976-58.21 85.018t-85.783 26.04q-7.66 0-16.85-1.148t-17.617-3.447l-36.764-102.633q13.02 6.127 26.807 9.574t26.042 3.446q26.041 0 47.487-11.871t32.934-44.04l15.319-44.424-170.8-442.703H2072.2l101.868 284.923 95.74-284.923h118.718zm236.67 441.17q-13.021 6.128-29.488 9.958t-34.084 3.83q-24.51 0-47.104-6.51t-39.445-21.064-26.807-37.913-9.957-56.295V276.498h112.59v506.274q0 27.573 11.106 37.913t26.424 10.34q19.148 0 36.764-11.489v90.379zm510.87-219.053q0 49.785-18.383 92.294t-50.55 73.528-75.444 49.02-92.294 17.998-91.91-17.999-75.06-49.402-50.551-73.911-18.382-91.528q0-48.253 18.765-90.761t50.933-74.295 75.06-49.785 91.145-17.999q49.02 0 92.294 18t75.443 49.018 50.551 73.912 18.382 91.91zm-110.293 0q0-28.339-9.957-52.848t-27.19-42.892-40.212-28.722-49.019-10.34-49.019 10.34-40.21 28.722-27.19 42.892-9.958 52.848 9.957 52.849 27.19 42.891 40.211 28.723 49.02 10.34 49.018-10.34 40.211-28.723 27.19-42.891 9.958-52.849z"/>
               </svg>
-
-              <!-- Social Icons Container -->
               <div class="header__social-icons">
                   <a href="#" class="header__icon-link"><i class="fab fa-twitter header__icon"></i></a>
                   <a href="#" class="header__icon-link"><i class="fab fa-facebook-f header__icon"></i></a>
                   <a href="#" class="header__icon-link"><i class="fas fa-envelope header__icon"></i></a>
               </div>
-
-              <!-- Mobile background Intro in SVG -->
               <svg width="375" height="445" xmlns="http://www.w3.org/2000/svg" class="header-mobile__intro"><defs><linearGradient x1="14.569%" y1="-6.457%" x2="132.964%" y2="153.753%" id="a"><stop stop-color="#110A6D" offset="0%"/><stop stop-color="#BDBAFA" offset="100%"/><stop stop-color="#BDBAFA" offset="100%"/></linearGradient></defs><path d="M0 376.28c67.572-32.674 124.62-32.674 171.144 0 69.787 49.013 141.558 86.511 242.423 59.172 67.244-18.226 67.244-163.377 0-435.452H0v376.28z" fill="url(#a)" fill-rule="evenodd"/></svg>
-
-              <!-- Mobile Illustration -->
               <div class="header-mobile__illustration-box">
-                <img src="images/illustration-main.svg" alt="illustration" class="header-mobile__illustration-image">
+                <img src="images/illustration-main.svg" alt="illustration" class="header-mobile__illustration">
               </div>
               
 
         </header>
 
-        <!-- The main content section of the Landing Page -->
         <main class="fylo">
           <h4 class="fylo__heading">All your files in one secure location, accessible anywhere.</h4>
           <p class="fylo__text">Fylo stores all your most important files in one secure location. 
