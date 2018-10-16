@@ -428,6 +428,7 @@ body {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
