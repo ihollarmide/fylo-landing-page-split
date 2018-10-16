@@ -196,7 +196,7 @@ body {
         -ms-flex-align: unset;
             align-items: unset;
     height: unset;
-    /* New Grid positioning in mobile screens */
+    /* New grid  */
     -ms-grid-column: 6;
     -ms-grid-column-span: 3;
     grid-column: 6 / 9;
@@ -208,7 +208,6 @@ body {
 }
 
 .header__icon-link {
-  /* Default link styling reset */
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
@@ -241,19 +240,21 @@ body {
   }
 }
 
-/* Mobile Header Styling */
-.header-mobile__intro {
-  /* Mobile Header Intro non-visibility on desktop screens */
-  display: none;
+.header__intro {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 768px) {
-  .header-mobile__intro {
-    /* Mobile Header Intro visibility on mobile screens */
-    display: unset;
+  .header__intro {
+    height: unset;
+    width: unset;
+    visibility: visible;
+    opacity: 1;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    /* Scaled the size of the header intro on large mobile screen to occupy more space */
     -webkit-transform: scale(2.1);
         -ms-transform: scale(2.1);
             transform: scale(2.1);
@@ -264,7 +265,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .header-mobile__intro {
+  .header__intro {
     -webkit-transform: scale(1.8);
         -ms-transform: scale(1.8);
             transform: scale(1.8);
@@ -272,7 +273,7 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-  .header-mobile__intro {
+  .header__intro {
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
             transform: scale(1.5);
@@ -280,7 +281,7 @@ body {
 }
 
 @media only screen and (max-width: 400px) {
-  .header-mobile__intro {
+  .header__intro {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
             transform: scale(1.2);
@@ -288,8 +289,7 @@ body {
 }
 
 @media only screen and (max-width: 375px) {
-  .header-mobile__intro {
-    /* Reset the scaling to default value to match screen size */
+  .header__intro {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1);
@@ -299,23 +299,12 @@ body {
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .header-mobile__intro {
-    /* Reduced the scaling to smaller size to match screen size */
-    -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-}
-
-.header-mobile__intro__illustration-box {
-  /* Mobile Header Illustration non-visibility on desktop screens */
+.header__illustration-box {
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .header-mobile__intro__illustration-box {
-    /* Mobile Header Illustration visibility on mobile screens */
+  .header__illustration-box {
     display: unset;
     position: absolute;
     top: 28%;
@@ -326,16 +315,12 @@ body {
   }
 }
 
-.header-mobile__intro__illustration-image {
-  /*Mobile Illustration width*/
+.header__illustration {
   width: 115%;
 }
 
 .fylo {
-  /* Main section styling */
-  /* Occupy full column  */
   grid-column: 1 / -1;
-  /* Display as grid for easy palcements of child elements */
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: minmax(min-content, max-content);
@@ -346,12 +331,10 @@ body {
 
 @media only screen and (max-width: 768px) {
   .fylo {
-    /* Reset Grid display on mobile screens */
     display: unset;
     -ms-grid-rows: unset;
         grid-template-rows: unset;
     grid-row-gap: unset;
-    /* Inherit and change grid layout with new values */
     grid-column: 1 / -1;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -362,7 +345,6 @@ body {
 }
 
 .fylo__heading {
-  /* FOnt properties styling*/
   font-size: 3.5rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -371,13 +353,11 @@ body {
 
 @media only screen and (max-width: 768px) {
   .fylo__heading {
-    /* Font-size increased on mobiles for easy readability */
     font-size: 4rem;
   }
 }
 
 .fylo__text {
-  /* Main text styling */
   font-family: 'Open Sans';
   font-weight: 400;
   color: gray;
@@ -390,14 +370,12 @@ body {
 
 @media only screen and (max-width: 768px) {
   .fylo__text {
-    /* MainnText Styling on Mobile */
     font-size: 2rem;
     margin: 3rem 0 6rem 0;
   }
 }
 
 .fylo__form {
-  /* Fylo form styling */
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr;
@@ -410,13 +388,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .fylo__form {
-    /* Reset display from grid to default on mobile screens */
     display: unset;
-    -ms-grid-columns: unset;
-        grid-template-columns: unset;
-    -ms-grid-rows: unset;
-        grid-template-rows: unset;
-    grid-column-gap: unset;
   }
 }
 
@@ -481,9 +453,7 @@ body {
 }
 
 .footer {
-  /* Occupy full column  */
   grid-column: 1 / -1;
-  /*Position items  and text at the center*/
   -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
